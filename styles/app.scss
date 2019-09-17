@@ -1,0 +1,238 @@
+body {
+  padding: 0;
+  margin: 0;
+  transition-duration: .5s;
+
+  &.blind {
+    background: black;
+    transition-duration: .5s;
+
+    #root {
+      transition-duration: .5s;
+  
+      .title {
+        color: white;
+      }
+  
+      span, li, input {
+        font-weight: 600;
+        color: black;
+      }
+  
+      .buttons-blind p {
+        color: white;
+      }
+    }
+
+  }
+}
+
+#root {
+  padding: 10px;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.wrapper button, .wrapper input, .Region, .region-info div, .alert {
+  border-radius: 5px;
+}
+
+.app-container {
+  margin: 0 auto;
+  position: relative;
+  width: 1000px;
+  margin-top: 100px;
+  font-family: 'Quicksand', sans-serif;
+
+  p, span, li, input {
+    font-weight: 100;
+  }
+}
+
+.wrapper {
+  display: flex;
+
+  input {
+    width: 100%;
+    outline: none;
+  }
+
+  button {
+    margin-left: 10px;
+    outline: none;
+    flex-wrap: nowrap;
+    background: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input, button {
+    padding: 20px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 0 10px rgba(161, 161, 161, 0.5);
+  }
+}
+
+.buttons-blind {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    outline: none;
+    box-shadow: 0 0 10px rgba(161, 161, 161, 0.5);
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+.previousCities {
+  height: 0;
+  margin: 5px 0 0 0;
+  width: 100%;
+  list-style: none;
+  overflow: hidden;
+  position: absolute;
+  padding: 0;
+  background: white;
+  box-shadow: 0 0 10px rgba(161, 161, 161, 0.5);
+  border-radius: 0 0 5px 5px;
+  
+  &.opened {
+    height: inherit;
+    transition-duration: .5s;
+  }
+
+  li {
+    font-size: 16px;
+    padding: 16px 0;
+    list-style: none;
+    margin-left: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.alert {
+  text-align: center;
+  display: block;
+  padding: 15px 0;
+  transition-duration: .3s;
+  margin-top: 10px;
+  color: white;
+  background: rgb(255, 118, 118);
+  box-shadow: 0 0 10px rgba(161, 161, 161, 0.5);
+
+  &.hidden {
+    display: none;
+    transition-duration: .3s;
+  }
+}
+
+.Info {
+  width: 100%;
+  margin: 0;
+
+  .Region {
+    box-shadow: 0 0 10px rgba(161, 161, 161, 0.5);
+    background: white;
+    
+    .city-region {
+      padding: 20px;
+      display: block;
+    }
+  }
+
+  .region-info {
+    display: flex;
+    justify-content: space-between;
+
+    & > div {
+      padding: 0;
+      margin: 0;
+      width: 30%;
+    }
+  }
+}
+
+.Weather, .Main, .Wind {
+  text-align: center;
+  background: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(161, 161, 161, 0.5);
+
+  .element {
+    width: 100%;
+    display: block;
+    padding: 10px 0;
+    
+    &:last-child {
+      padding-bottom: 20px;
+    }
+
+    &:first-child {
+      padding-top: 20px;
+    }
+  }
+}
+
+@media all and (max-width: 1001px) {
+
+  .title {
+    font-size: 20px;
+    text-align: left;
+    margin: 0;
+  }
+
+  .buttons-blind {
+    justify-content: space-between;
+  }
+
+  .app-container {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 20px;
+
+    .previousCities {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      margin-top: 10px;
+
+      li {
+        padding: 25px 0;
+      }
+    }
+  }
+
+  .Info .region-info {
+    flex-wrap: wrap;
+
+    div {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+}
+
